@@ -6,8 +6,33 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "风火轮商城",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "blue"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon-index.png",
+        "selectedIconPath": "img/icon-index-active.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "购物车",
+        "iconPath": "img/icon-cart.png",
+        "selectedIconPath": "img/icon-cart-active.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "积分",
+        "iconPath": "img/icon-mall.png",
+        "selectedIconPath": "img/icon-mall-active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

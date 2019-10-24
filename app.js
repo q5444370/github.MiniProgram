@@ -1,39 +1,36 @@
+//注册一个小程序
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+  //小程序初始化完成时,此函数只执行一次
+  onLaunch: function() {
+    //获取用户信息
+    wx.getUserInfo({
+      success: function(res) {
+        console.log(res);
       }
     })
   },
+  //小程序显示出来时候
+  onShow(options) {
+    console.log(options)
+    console.log("--------")
+    console.log(options.scene)
+
+
+    //获取用户信息,将用户信息传递给服务器
+
+  },
+  //小程序隐藏时
+  onHide() {
+
+  },
+  //小程序产生一些错误时候
+  onError(msg) {
+
+  },
+  //定义全局数据
   globalData: {
-    userInfo: null
+    name: 'coderwhy',
+    age: 18
   }
 })
