@@ -1,0 +1,18 @@
+<!-- text标签类似于 -->
+<text selectable="{{true}}">pages/text/text.wxml</text> 镂空效果
+<button size="mini" plain="{{plain}}" open-type="">dd</button>
+<button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">授权</button>
+<image src="/img/p.PNG"></image>
+<!-- 选择本地图片 -->
+<button size="mini" bindtap="onChooseImage">选择图片</button>
+<image src="{{imagePath}}"></image>
+<image wx:for="{{100}}"
+       src="https://www.segmotech.com/images/banner_imag.png"
+       bindload="handleImageLoad"
+       lazy-load
+       mode="center"
+></image>
+<!-- 常按图片，实现小程序码 -->
+<image 
+    show-menu-by-longpress
+    src="https://up-fd.zol-img.com.cn/g1/M04/01/06/ChMljl2pU9aIWz47AABXhChg3rUAAQBNAKQqVIAAFec305.jpg"></image>

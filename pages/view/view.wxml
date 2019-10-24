@@ -1,0 +1,10 @@
+<!-- 块级元素 -->
+<view class="zuiwai">
+
+<view 
+hover-class="hovcls"
+hover-stay-time="100"
+hover-stop-propagation
+>我是一个盒子</view>
+为了你
+</view>

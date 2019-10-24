@@ -1,0 +1,11 @@
+.box {
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+.box1 {
+  background: blue;
+  width: 200rpx;
+  height: 200rpx;
+}

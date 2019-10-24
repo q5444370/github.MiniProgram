@@ -1,0 +1,12 @@
+<!-- 横向滚动 -->
+<scroll-view scroll-x>
+  <view>wwww</view>
+  <view>eeeee</view>
+  <text>tttt</text>
+  <text>dddd</text>
+  <text>dddd</text>
+  <text>bbbb</text>
+  <view wx:for="{{10}}" class="item1">{{item}}</view>
+</scroll-view>
+<view class="box">第一个</view>
+<view class="box1">第二个</view>

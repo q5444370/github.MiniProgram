@@ -1,0 +1,10 @@
+.zuiwai {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+
+.hovcls {
+  font-size: 20px;
+  background: orange;
+}
