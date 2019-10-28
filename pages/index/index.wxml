@@ -1,13 +1,24 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+<view>{{age>=18?"成年人":"未成年人"}}</view>
+<view>{{nowTime}}</view>
+
+
+<button size="mini" bindtap='handColor'>切换</button>
+<view class="box {{isActive ? 'active' :''}}">ddd</view>
+<!-- wx:if的作用 -->
+<view wx:if="{{isShow}}">哈哈</view>
+<button bindtap="handShow">切换显示</button>
+<!-- wx:elif/wx:else -->
+<button size="mini" bindtap="handIeIncrement">分数递增6分</button>
+<view wx:if="{{score>=90}}">优秀</view>
+<view wx:elif="{{score>=80}}">良好</view>
+<view wx:else>及格</view>
+<!-- hidder属性-->
+<!-- 一般情况下显示和隐藏切换频率高的时候，使用hidden -->
+<view wx:if="{{false}}">显示还是隐藏</view>
+<view hidden="{{true}}">hidden隐藏</view>
+<view></view>
+<include src="/pages/include/dibu/dibu.wxml" />
+<!-- 在head.wxml中使用了插值表达式，在include不能使用 -->
+<include src="/pages/include/head/head.wxml" />
+<view>{{ccc}}</view>
+<view>{{numberToFixd(25.888)}}</view>

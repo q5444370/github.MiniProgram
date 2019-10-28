@@ -1,0 +1,24 @@
+<!-- 给整个wxs起一个名字 -->
+<!-- <wxs module="info">
+  //js代码
+  var message = "Hello World";
+  var name = "codeWhy";
+
+  function sum(num1, num2) {
+    return num1 + num2
+  }
+  //common.js的模块化导出的写法
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum
+
+  }
+</wxs> -->
+<!-- 定义在单独的wxs文件中，再使用<wxs>标签进行导入 -->
+<wxs src="../../wxs/info.wxs" module="info"></wxs>
+<wxs src="../../wxs/format.wxs" module="format"></wxs>
+<view>{{info.message}}</view>
+<view>{{format.priceFormat(price,3)}}</view>
+<view>11111</view>
+<view>{{format.dateFormat(time,'yyyy-MM-dd hh:mm:ss')}}</view>

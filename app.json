@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/wxs/wxs",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/for/for",
+    "pages/logs/logs",
+    "pages/include/head/head",
+    "pages/include/dibu/dibu"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,10 @@
+<!--1.wx:for的问题-->
+<!-- 遍历数组 -->
+<!-- <view wx:for="{{['a','b','c']}}">{{item}}{{index}}</view>
+<view wx:for="{{5}}" wx:for-item="movie"wx:for-index="i">{{movie}}{{i}}</view> -->
+
+<block wx:for="{{3}}" wx:key="">
+  <button>我是按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容</text>
+</block>
