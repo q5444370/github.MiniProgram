@@ -7,48 +7,85 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    titles: ["衣服", "裤子", "鞋子"],
+    count: 0,
+    active: true
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  //点击事件
+  hendleBtnClick() {
+    console.log("按钮发生点击")
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+  //手指开始触摸
+  startClick(d) {
+    console.log("开始触摸按钮")
+    console.log(d)
+    console.log("1111111")
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  moveClick() {
+    console.log("手指触摸后移动")
+  },
+  endClick(c) {
+    console.log(c)
+    console.log("手指触摸动作结束")
+  },
+  //手指触摸后超过30秒
+  longpressClick() {
+    console.log("手指触摸后，超过350ms再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发")
+  },
+  //手指监听点击 
+  handleEventClick(event) {
+    console.log(event)
+  },
+  handaaClick(event) {
+    console.log(event)
+    const dataset = event.currentTarget.dataset;
+    let title = dataset.item;
+    let index = dataset.index;
+    console.log(title, index);
+  },
+  handCaptureView1() {
+    console.log("handCaptureView1")
+  },
+  handleBindView1() {
+    console.log("handleBindView1");
+  },
+  handCaptureView2() {
+    console.log("handCaptureView2")
+  },
+  handleBindView2() {
+    console.log("handleBindView2");
+  },
+  handCaptureView3() {
+    console.log("handCaptureView3")
+  },
+  handleBindView3() {
+    console.log("handleBindView3");
+  },
+  //组件与对象之间建立的联系
+  handleIncrement() {
+    console.log("-----")
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      count: this.data.count + 1
     })
+  },
+  hand() {
+    this.setData({
+      active: !this.data.active
+    })
+  },
+  handleTabClick(event) {
+    console.log(event)
+  },
+  handleCpn() {
+    //修改my-sel中的count
+    const my_sel = this.selectComponent("#sel-id")
+    console.log(my_sel)
+    //这种做法，一般不推荐
+    my_sel.setData({
+      count: my_sel.data.count + 20
+    })
+    //通过方法对数据进行修改
+    my_sel.inccementCounter(10)
   }
 })

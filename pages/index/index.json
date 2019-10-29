@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-event": "/components/my_enent/my_enent",
+    "tab-comtrol": "/components/tab-control/tab-control",
+    "my-prop": "/components/my_prop/my_prop",
+    "my-sel": "/components/my-sel/my-sel",
+    "my-usb":"/components/my-usb/my-usb",
+    "my-mslot": "/components/my-mslot/my-mslot"
+  }
 }

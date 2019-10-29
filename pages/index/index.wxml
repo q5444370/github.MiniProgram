@@ -1,13 +1,55 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<button bind:tap="hendleBtnClick">按钮</button>
+<!-- 常见的一些事件 -->
+<view class="view" bind:touchstart="startClick" bind:touchmove="moveClick" bind:touchend="endClick" bind:longpress="longpressClick">开始触摸按钮</view>
+
+<!-- 事件对象的分析 -->
+<text size="mini" bind:tap="handleEventClick">事件对象</text>
+<view class="containers">
+  <block wx:for="{{titles}}" wx:key="{{index}}" wx:for-item="e">
+    <view class="item" bind:tap="handaaClick" data-index="{{index}}" data-item="{{e}}">{{e}}</view>
+  </block>
 </view>
+
+<!-- 关于事件冒泡和事件捕获 -->
+<!-- bind:表示一层一层传递-->
+<!-- catch表示阻止事件的进一步传递 -->
+<!-- <view class="view1" capture-bind:tap="handCaptureView1" bindtap="handleBindView1">
+  <view class="view2" capture-bind:tap="handCaptureView2" bindtap="handleBindView2">
+    <view class="view3" capture-bind:tap="handCaptureView3" bindtap="handleBindView3">
+
+    </view>
+  </view>
+</view> -->
+<!-- 这是引入的自定义组件 -->
+
+<view class="title">我和你</view>
+<view>当前计数{{count}}</view>
+<my-event bind:increment="handleIncrement"></my-event>
+
+<view class='ccc {{active ? " active " : " "}}'>第一个</view>
+<button bind:tap="hand">点我</button>
+<my-prop title="白1的"></my-prop>
+<!-- 自定义tab -->
+<tab-comtrol titles="{{['衣服','鞋子','裤子']}}" bind:itemClick="handleTabClick"></tab-comtrol>
+<!-- 直接选中组件修改数据/调用方法 -->
+<button bindtap="handleCpn">修改组件内部数据</button>
+
+<my-sel id="sel-id" />
+
+<!-- 单个插槽的使用 -->
+<my-usb>
+  <button size="mini">我是插入的按钮</button>
+</my-usb>
+
+<my-usb>
+  <text>哈哈</text>
+</my-usb>
+
+<!-- 多个插槽的使用 
+    1.给每一个插槽起一个名字：name属性，需在对应的组件中设置
+    2.必须在Component对象中添加一个选项：options->multipleSlots
+-->
+
+<my-mslot>
+  <button size="mini" slot="slot1">我是插入的按钮呀 </button>
+</my-mslot>

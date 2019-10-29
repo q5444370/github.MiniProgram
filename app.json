@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "components/my-sel/my-sel",
+    "components/my-usb/my-usb"
   ],
   "window": {
     "backgroundTextStyle": "light",
